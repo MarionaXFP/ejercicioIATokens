@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estimador de tokens y coste</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header><div class="eyebrow">SIMULADOR DE API</div><h1>Estimador de tokens y coste</h1><p>Compara escenarios de conversación antes de procesarlos.</p></header>
+    <section class="card controls"><label for="model">Modelo</label><select id="model"></select><span id="pricing"></span><label class="check"><input id="cached" type="checkbox"> Aplicar precio de entrada en caché</label></section>
+    <section class="editor-grid">
+      <div class="card field"><div class="field-head"><label for="prompt">Prompt de entrada</label><span id="promptChars">0 caracteres</span></div><textarea id="prompt" placeholder="Escribe aquí el prompt que enviarías al modelo..."></textarea></div>
+      <div class="card field"><div class="field-head"><label for="completion">Salida ficticia</label><span id="completionChars">0 caracteres</span></div><textarea id="completion" placeholder="Simula aquí la respuesta esperada del modelo..."></textarea></div>
+    </section>
+    <section class="results"><article class="metric"><span>Tokens de entrada</span><strong id="inputTokens">0</strong><small id="inputCost">0,000000 $</small></article><article class="metric"><span>Tokens de salida</span><strong id="outputTokens">0</strong><small id="outputCost">0,000000 $</small></article><article class="metric total"><span>Coste total estimado</span><strong id="totalCost">0,000000 $</strong><small>por esta interacción</small></article></section>
+    <section class="card details"><h2>Cómo se calcula</h2><p id="formula"></p><p class="note">La tokenització mostrada és una estimació local basada en caràcters i paraules. El consum real pot variar segons el tokenitzador del model, els missatges del sistema, les eines i el format de la petició.</p></section>
+    <footer>Precios de API consultados el 09/09/2026 · <a href="https://developers.openai.com/api/docs/pricing" target="_blank" rel="noreferrer">Ver precios oficiales de OpenAI</a></footer>
+  </main><script src="app.js"></script>
+</body></html>
